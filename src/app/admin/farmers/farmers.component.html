@@ -1,0 +1,142 @@
+<div class="col-md-12 grid-margin stretch-card">
+  <div class="card">
+    <div class="card-body">
+      <h4 class="card-title fw-bolder">Farmers</h4>
+      <h3>LoginForm</h3>
+      <form [formGroup]="formdata" (ngSubmit)="submit(formdata.value)" class="forms-sample">
+
+        <div class="row">
+          <div class="col-lg-4">
+            <div class="form-group">
+              <label for="1">Name<span style="color: red;">*</span></label>
+              <input type="text" class="form-control" formControlName="name" id="1" placeholder="Enter Name Here">
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="form-group">
+              <label for="2">Email <span style="color: red;">*</span></label>
+              <input type="text" class="form-control" id="2" formControlName="email" placeholder="Enter Email Here">
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="form-group">
+              <label for="3">Mobile No<span style="color: red;">*</span></label>
+              <input type="text" class="form-control" id="3" formControlName="mobileno"
+                placeholder="Enter MobileNo Here">
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="form-group">
+              <label for="4">Landspace <span style="color: red;">*</span></label>
+              <input type="text" class="form-control" id="4" formControlName="landspace"
+                placeholder="Enter Landspace Here">
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="form-group">
+              <label for="5">Password<span style="color: red;">*</span></label>
+              <input type="text" class="form-control" id="5" formControlName="password"
+                placeholder="Enter Password Here">
+            </div>
+          </div>
+        </div>
+
+        <input type="submit" [disabled]="formdata.invalid" class="btn btn-success me-2" Value="Submit" />
+
+        <button [disabled]="formdata.invalid" class="btn btn-danger">Cancel</button>
+      </form>
+
+    </div>
+  </div>
+</div>
+
+
+<!-- <div class="card">
+  <div class="card-body">
+    <h4 class="card-title">Large Modal</h4>
+    <p class="card-description">Large sized modal with max-width set to <code>90%</code></p>
+    <div class="modal demo-modal">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Modal title</h5>
+            <button type="button" class="close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <p>Modal body text goes here.</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-success">Submit</button>
+            <button type="button" class="btn btn-light">Cancel</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div> -->
+
+
+<div class="col-lg-12 grid-margin stretch-card">
+  <div class="card">
+    <div class="card-body">
+      <h4 class="card-title">Farmers Table</h4>
+
+      <div class="table-responsive">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>
+                Actions
+              </th>
+              <th>No</th>
+              <th>
+                Name
+              </th>
+              <th>
+                Email
+              </th>
+              <th>
+                Mobile No
+              </th>
+              <th>
+                Landspace
+              </th>
+              <th>
+                Password
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let data of data, let i= index">
+              <td><button (click)="edit(data._id)" class="btn btn-icon mb-2 mr-2 btn-icon-only btn-pill btn-primary">
+                  <i class="ti-pencil"></i>
+                </button>
+                <button class="btn btn-icon mb-2 mr-2 btn-icon-only btn-pill btn-danger" style="color: white;">
+                  <i class="ti-trash"></i>
+                </button>
+              </td>
+              <td>{{ i+1 }}</td>
+              <td class="py-1">
+                {{data.name}}
+              </td>
+              <td class="py-1">
+                {{data.email}}
+              </td>
+              <td class="py-1">
+                {{data.mobileno}}
+              </td>
+              <td class="py-1">
+                {{data.landspace}}
+              </td>
+              <td class="py-1">
+                {{data.password}}
+              </td>
+
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
